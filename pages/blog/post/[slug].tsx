@@ -1,7 +1,7 @@
 import { GetStaticProps } from "next";
-import Header from "../../components/Header";
-import { sanityClient, urlFor } from "../../sanity";
-import { Post } from "../../typings";
+import Header from "../../../components/Header";
+import { sanityClient, urlFor } from "../../../sanity";
+import { Post } from "../../../typings";
 import PortableText from "react-portable-text";
 import { useForm, SubmitHandler } from "react-hook-form";
 import { useState } from "react";
@@ -77,10 +77,10 @@ function Post({ post }: Props) {
             content={post.body}
             serializers={{
               h1: (props: any) => (
-                <h1 className="text-2xl font-bold  my-5" {...props} />
+                <h1 className="text-3xl font-bold  my-5" {...props} />
               ),
               h2: (props: any) => (
-                <h1 className="text-xl font-bold my-5" {...props} />
+                <h1 className="text-2xl font-bold my-5" {...props} />
               ),
               li: ({ children }: any) => (
                 <li className="ml-4 list-disc">{children}</li>
@@ -197,7 +197,7 @@ function Post({ post }: Props) {
 export default Post;
 
 export const getStaticPaths = async () => {
-  const query = `*[type=='post']{_id,slug{current,}}`;
+  const query = `*[_type=='post']{_id,slug{current,}}`;
 
   const posts = await sanityClient.fetch(query);
 

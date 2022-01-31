@@ -23,7 +23,9 @@ function Header() {
             </div>
             <div className="flex items-center space-x-5 text-orange-600">
                 <h3>Sign In</h3>
-                <h3 className="border border-orange-600 rounded-full px-4 py-1">Get Started</h3>
+                <Link href={'/blog'}>
+                <h3 className="border border-orange-600 rounded-full px-4 py-1 hover:bg-orange-500 hover:text-white transition-colors ease-out">Read our Blog</h3>
+                </Link>
             </div>
 
         </header>
