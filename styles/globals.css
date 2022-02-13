@@ -4,3 +4,15 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+@layer components{
+    .responsive-x {
+        @apply md:max-w-3xl mx-auto max-w-md sm:max-w-xl xl:max-w-5xl
+    }
+    .sick-hover{
+        @apply relative
+        before:absolute before:block before:w-[100%] before:h-[2px] before:bottom-0 
+        before:left-0 before:transition-all before:duration-300 ease-in-out before:scale-x-0 hover:before:scale-x-100 before:bg-black
+        dark:before:bg-slate-200 before:hover:text-black
+    }
+}

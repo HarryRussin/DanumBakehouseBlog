@@ -50,3 +50,8 @@ export interface Comment {
   _type: string;
   _updatedAt: string;
 }
+
+export interface Category{
+  _id:string
+  title:string
+}

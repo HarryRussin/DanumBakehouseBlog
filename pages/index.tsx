@@ -14,14 +14,14 @@ interface Props {
 }
 
 function Home({ products }: Props) {
-  const [productarr, setproducts] = useState<Product[]>(shuffleArray(products));
+  const [productarr, setproducts] = useState<Product[]>(products);
 
   const largeText = () => (
     <div>
       <span className="underline font-bold underline-offset-1 decoration-4">
         Danum Bakehouse
       </span>{" "}
-      is the <span className="italic">first</span> subscription service for
+      is Doncaster's <span className="italic">first</span> subscription service for
       artisan bakery produce
     </div>
   );
@@ -52,12 +52,12 @@ function Home({ products }: Props) {
       {/* Carousel */}
       <div className="flex items-center justify-center pt-20 pb-10">
         <h1 className="lg:text-7xl text-5xl md:text-6xl font-amatic font-bold">
-          A taste of our stuff
+          A taste of our produce
         </h1>
       </div>
 
       <div className="flex justify-evenly flex-wrap lg:flex-nowrap space-y-10 md:space-y-0 md:space-x-10 px-10 sm:px-20 pb-20 flex-col sm:flex-row">
-        {productarr.slice(0, 3)?.map((product) => (
+        {productarr.slice(0,3)?.map((product) => (
           <Link href={`product/${product.slug.current}`}>
             <div
               key={product._id}
